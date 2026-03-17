@@ -11,7 +11,7 @@ type car struct {
 
 type bankAccount struct {
 	owner   string
-	balance string
+	balance float64
 }
 
 func main() {
@@ -40,6 +40,8 @@ func main() {
 	c1.PrintCarDetails()
 
 	fmt.Println("\nExercise 5")
+	b1 := bankAccount{owner: "John Doe", balance: 500}
+	b1.deposit(100)
 
 }
 
@@ -52,6 +54,7 @@ func (c car) PrintCarDetails() {
 	fmt.Println("Year: ", c.year)
 }
 
-func (b bankAccount) deposit() {
-
+func (b bankAccount) deposit(amount float64) {
+	b.balance = b.balance + amount
+	fmt.Println("BALANCE: ", b.balance)
 }
