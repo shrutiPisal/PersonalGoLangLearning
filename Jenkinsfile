@@ -10,7 +10,7 @@ pipeline {
                 sh 'go version'
                 sh 'go mod download'
                 sh 'go mod tidy'
-                sh 'go install github.com/onsi/ginkgo/v2/ginkgo'
+                sh 'go get github.com/onsi/ginkgo/v2/ginkgo'
             }
         }
         stage('Ginkgo Tests') {
