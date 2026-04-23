@@ -7,12 +7,13 @@ pipeline {
     stages {
         stage('Go Deps') {
             steps {
-                sh 'go --version'
+                sh 'go version'
+                sh 'make deps'
             }
         }
         stage('Ginkgo Tests') {
                     steps {
-                        echo 'Hello from Jenkins World'
+                        sh 'make functional-tests'
                     }
                 }
     }
