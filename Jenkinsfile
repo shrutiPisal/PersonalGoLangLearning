@@ -2,12 +2,12 @@ pipeline {
     agent any
 
     stages {
-        stage('Stage 1') {
+        stage('Go Deps') {
             steps {
-                echo 'Hello from Jenkins World'
+                sh 'go --version'
             }
         }
-        stage('Stage 2') {
+        stage('Ginkgo Tests') {
                     steps {
                         echo 'Hello from Jenkins World'
                     }
